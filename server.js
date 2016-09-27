@@ -6,6 +6,7 @@ app.set("views", "./views");
 app.set("view engine", "ejs");
 
 require("./controllers")(app);
+require("./db");
 
 app.use((req, res)=>{
   res.status(404).render("common/404");
