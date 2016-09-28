@@ -11,6 +11,17 @@ router.get("/", (req, res, next)=>{
   });
 });
 
+router.get("/:slug", (req, res, next)=>{
+  Article.findOne({slug: req.params.slug}, (err, data)=>{
+    if (err) return next(err);
+    if (data) {
+      res.render("articles/show", {article: data});
+    } else {
+      next();
+    }
+  });
+});
+
 router.get("/new", (req, res)=>{
   res.render("articles/new");
 });
