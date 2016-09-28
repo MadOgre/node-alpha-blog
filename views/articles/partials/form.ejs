@@ -1,0 +1,15 @@
+<form method="POST">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="test" class="form-control" name="title" id="title" placeholder="My Awesome Article" value="<%= locals.article ? article.title : '' %>" required>
+  </div>
+  <div class="form-group">
+    <label for="body">Text:</label>
+    <textarea class="form-control" name="body" id="body" rows="15"><%= locals.article ? article.title : '' %></textarea>
+  </div>
+  <div class="form-group">
+    <label for="author">Author:</label>
+    <input type="text" class="form-control" name="author" id="author" value="<%= locals.article ? article.title : '' %>">
+  </div>
+  <button type="submit" class="btn btn-default">Create</button>
+</form>
