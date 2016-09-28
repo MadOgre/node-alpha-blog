@@ -29,7 +29,7 @@ router.get("/new", (req, res)=>{
 router.post("/new", (req, res, next)=>{
   Article.create(req.body, (err, data)=>{
     if (err) return next(err);
-    res.redirect("/articles");
+    res.redirect("/articles/" + data.slug);
   });
 });
 
