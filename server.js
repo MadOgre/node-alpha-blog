@@ -2,8 +2,12 @@
 let express = require("express");
 let app = express();
 
+let bodyParser = require("body-parser");
+
 app.set("views", "./views");
 app.set("view engine", "ejs");
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 require("./controllers")(app);
 require("./db");
