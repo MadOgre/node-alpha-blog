@@ -14,7 +14,7 @@ app.use((req, res)=>{
 
 app.use((err, req, res, next)=>{
   if (app.get("env") === 'development') {
-    res.status(500).json(err);
+    res.status(500).render("common/500", {error: err.message});
   } else {
     res.status(500).render("common/500");
   }
